@@ -1,7 +1,10 @@
 // https://doc.rust-lang.ru/book/ch02-00-guessing-game-tutorial.html
 use std::io;
+use rand::Rng;
 fn main() {
     println!("Guess the number!");
+    let secret_number = rand::thread_rng().gen_range(1..=100);
+   println!("The secret number is: {secret_number}"); 
     println!("Please input your guess!");
     let mut guess = String::new();
     io::stdin()
